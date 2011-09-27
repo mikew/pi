@@ -1,0 +1,158 @@
+pizzas:
+  cheese:
+    desc: An herb tomato base with your choice of our italian cheese blend or soya cheese. enjoy it plain or add toppings of your choice.
+  classic:
+    toppings:
+      - pepperoni
+      - green peppers
+      - mushrooms
+      - sliced fresh tomatoes
+  veggie_life:
+    bases:
+      - herb tomato
+      - roasted garlic and olive oil
+    toppings:
+      - artichoke hearts
+      - grilled zucchini
+      - red onion
+      - sliced black olives
+      - cherry tomatoes
+      - toasted almonds
+    cheeses:
+      - italian blend
+      - soya
+  pythagoras:
+    base: creamy tomato sauce
+    toppings:
+      - gingered sesame asparagus
+      - red grapes
+      - sliced brie
+      - bacon
+      - italian blend
+      - parmesan cheese
+  fibonacci:
+    base: roasted garlic and olive oil
+    toppings:
+      - compote of caramelized pear and red onion braised in port
+      - baby greens
+      - toasted walnuts
+      - gouda cheese
+  prime_colours:
+    base: pesto base
+    toppings:
+      - roasted chicken
+      - sun-dried tomatoes
+      - bacon
+      - red onion
+      - hot banana peppers
+      - italian blend
+      - parmesan
+  pi:
+    base: pesto tomato
+    toppings:
+      - shaved steak
+      - roasted red pepper
+      - mushrooms
+      - avocado slices
+      - leeks
+  archimedes:
+    base: mediterranean vegetable
+    toppings:
+      - baby spinach
+      - grilled zucchini
+      - fennel slices
+      - sundried tomatoes
+      - roasted garlic
+      - italian blend + feta
+      - soya
+  einstein:
+    base: pesto
+    toppings:
+      - proscuitto ham
+      - artichoke hearts
+      - red onion
+      - sliced black olives
+      - pineapple chunks
+  pascal:
+    base: curry infused tomato
+    toppings:
+      - chicken
+      - sweet corn
+      - green peppers
+      - hot banana peppers
+      - fresh tomato
+  sir_isaac_salmon:
+    base: sundried tomato and avocado cream cheese
+    toppings:
+      - smoked salmon
+      - sweet potatoes
+      - red onion
+      - fresh tomatoes
+      - feta + italian
+  columbus:
+    base: pesto
+    toppings:
+      - shaved steak
+      - red onions
+      - mushrooms
+      - sundried tomatoes
+      - hot banana peppers
+      - feta + italian
+  carnivore:
+    base: black olive tomato
+    toppings:
+      - pepperoni
+      - bacon
+      - shaved steak
+      - chicken
+      - red onion
+  sicilian_salmon:
+    toppings:
+      - smoked salmon
+      - red onion
+      - fresh tomatoes
+      - capers
+      - feta cheese
+  tuscan:
+    toppings:
+      - italian sausage
+      - bacon
+      - mushrooms
+      - red onion
+      - fresh tomatoes
+  wok:
+    base: sesame seed crust with a teriyaki
+    toppings:
+      - shaved steak
+      - green peppers
+      - red onion
+      - portobello mushrooms
+      - italian blend + parmesan
+  szechuan_chicken:
+    base: habanero-infused tomato
+    toppings:
+      - baby spinach
+      - roasted red pepper
+      - red onions
+      - chicken
+      - pineapple chunks
+  calabria:
+    base: creamy red wine tomato
+    toppings:
+      - sun-dried tomatoes
+      - portobello mushrooms
+      - baby spinach
+      - red onion
+      - black olives
+      - italian blend + parmesan
+  genius:
+    base: olive oil garlic
+    toppings:
+      - baby greens
+      - leeks
+      - minced hot peppers
+      - pear and onion compote
+      - bacon
+      - feta
+  calzone:
+    desc: a thin crust italian turnover with tomato sauce and our italian cheese

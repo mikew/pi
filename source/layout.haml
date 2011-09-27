@@ -1,0 +1,27 @@
+!!!
+
+%html
+  %head
+    %title Pi Gourmet
+    = stylesheet_link_tag "screen.css"
+
+  %body
+    #heading
+      %h1 Pi
+      %h2 Gourmet Eatery
+
+    #pizza
+      #dessert
+        #salad
+          #pasta
+            #navigation
+              %ul
+                - %w[Pizza Dessert Salad Pasta].each do |w|
+                  %li{class: w.downcase}= link_to w, "##{w.downcase}"
+
+            #page= yield
+
+    #goal
+      %p all of our thin crust pizzas are made with vegan friendly dough and only the freshest ingredients.
+      %p our mediterranean style pizzas seek to fuse old world charm with contemporary tastes.
+      %p gluten-free dough available in small +$2.

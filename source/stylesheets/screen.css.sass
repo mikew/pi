@@ -1,0 +1,101 @@
+@import base
+@import blueprint/grid
+
++global-reset
++establish-baseline
+
+html
+  background-image: image-url('leather.png')
+
+body
+  color: #fff
+  +single-box-shadow(#000, 0, 0, 10px, 100%, true)
+
+#heading
+  h2
+    display: none
+
+  h1
+    +replace-text-with-dimensions('logo.png')
+    margin-left: -100px
+
+#menu
+  // this kind of kills mobilesafari
+  // $ends:    rgba(#000, 0.2)
+  // $middle:  rgba(#000, 0)
+  // +background-image(linear-gradient($ends, $middle 5%, $middle 95%, $ends 100%), image-url('menu.png'))
+
+  +single-box-shadow(#000, 0, 0, 10px, 0, true)
+  +single-transition(height, $menu-transition-duration, $menu-transition-timing)
+
+  background-color:  #fff
+  background-image:  image-url('menu.png')
+  color:             #000
+  height:            0
+  position:          relative
+
+  > div
+    +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
+    +opacity(0)
+
+    height:    0
+    left:      0
+    position:  absolute
+    top:       0
+
+#navigation
+  $fs: 24px
+  ul
+    +container
+
+  li
+    $sw: span(3)
+
+    +adjust-font-size-to($fs)
+    +column(3)
+    +opacity(0.5)
+    +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
+
+    background: image-url('ui.png') no-repeat
+    text-align: center
+
+    &.dessert
+      +sprite-column(2, $sw)
+    &.salad
+      +sprite-column(3, $sw)
+    &.pasta
+      +last
+      +sprite-column(4, $sw)
+
+    a
+      +bracket
+      +link-colors(#fff)
+      +padding-leader(5, $fs)
+
+      display:          block
+      text-decoration:  none
+
+#goal
+  margin:  0 auto
+  width:   span(6)
+
+  p
+    +leader
+
+#pizza #menu .pizza
+  +container
+
+@each $part in pizza 1196px, dessert 300px, salad 300px, pasta 400px
+  $section:  nth($part, 1)
+  $height:   nth($part, 2)
+
+  ##{$section}
+    &:target
+      #navigation .#{$section}
+        +opacity(1)
+        text-transform: uppercase
+
+      #menu
+        height: $height
+        .#{$section}
+          +opacity(1)
