@@ -1,0 +1,19 @@
+desserts:
+  gingerbread:
+    desc: gingerbread hot rum sauce yum
+    price: 7.75
+  fudge:
+    desc: kahhhhhhhhluaaaaa fudge cake
+    price: 7.75
+  non_dairy:
+    desc: non-dairy fudge cake! hyphens!
+    price: 6.75
+  cheese_cake:
+    desc: new yoik style cheese cakes
+    price: 8
+  fruit_crisp:
+    desc: ask which fruit!
+    price: 6.5
+  desert_specials:
+    desc: we are always making new desserts. do yourself a favor and ask
+    price: TBD

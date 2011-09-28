@@ -1,15 +1,26 @@
 #tiles
 #menu
   .pizza
-    %p I WORK FOR PIZZA
     %p= link_to "Close", "#"
     = render_pizza_list
   .dessert
-    %p I WORK FOR DESSERT
     %p= link_to "Close", "#"
+    - data.desserts.desserts.each do |key, map|
+      .item
+        .name= titleize key
+        .desc= map[:desc]
+        .prices= map[:price]
   .salad
-    %p I WORK FOR SALAD
     %p= link_to "Close", "#"
+    - data.salads.salads.each do |key, map|
+      .item
+        .name= titleize key
+        .desc= map[:desc]
+        .prices 6 9 14
   .pasta
-    %p I WORK FOR PASTA
     %p= link_to "Close", "#"
+    - data.pasta.pasta.each do |key, map|
+      .item
+        .name= titleize key
+        .desc= map[:desc]
+        .prices 6 9 14

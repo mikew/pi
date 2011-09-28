@@ -1,0 +1,9 @@
+salads:
+  caesar:
+    desc: our classic caesar with fresh romaine lettuce, slices mushrooms, oven roasted croutons in our lemon paresan dressing and topped with fresh parmesan.
+  sunrise:
+    desc: artisan lettuce blend with sliced cucumber, green onions, and toasted almonds drizzled with our citrus pomegranate molasses vinaigrette.
+  garden_blend:
+    desc: artisan lettuce blend with sundried tomatoes, grapefruit, roasted chicken and mixed seeds, drizzled with a red tarragon feta vinaigrette.
+  mediterranean:
+    desc: artisan lettuce blend with green peppers, red onion, artichoke hearts, olives and fresh parmesan, drizzled with our house mediterranean dressing.

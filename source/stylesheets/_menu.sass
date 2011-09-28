@@ -12,6 +12,7 @@
     bottom:       0
     margin-left:  -$blueprint-container-size / 2
     width:        $blueprint-container-size
+    z-index:      -1
 
 #menu, #tiles
   +opacity(0)
@@ -23,7 +24,7 @@
   position:  absolute
   width:     100%
 
-@each $part in pizza rhythm(107), dessert 300px, salad 300px, pasta 400px
+@each $part in pizza rhythm(105), dessert rhythm(25), salad rhythm(23), pasta rhythm(34)
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -35,21 +36,34 @@
         height: $height
       #tiles
         background-image: image-url("menu-#{$section}.png")
+      #menu .#{$section}
+        z-index: 2
 
 #menu
-  .pizza
-    > div
+  .name, .desc
+    +column(9)
+  .name
+    +bracket
+    +adjust-font-size-to(24px)
+  .desc
+    +adjust-font-size-to(14px)
+    text-align: justify
+  .prices
+    +adjust-leading-to(2)
+    +float-right
+
+    margin-top: rhythm(-2)
+    text-align: center
+  .pizza, .dessert, .salad, .pasta
+    .item
       +clearfix
       +trailer
-
-      &:hover
-        .prices
-          +opacity(1)
+  .pizza
+    .item:hover
+      .prices
+        +opacity(1)
     .prices
-      +float-right
       +opacity(0.4)
-      margin-top:   rhythm(-2)
-
       .small, .medium, .large
         +column(1)
         +padding-leader(2)
@@ -61,11 +75,3 @@
       .large
         +sprite-img('sizes.png', 3, 1, $blueprint-grid-width)
         +last
-    .name, .desc
-      +column(9)
-    .name
-      +bracket
-      +adjust-font-size-to(24px)
-    .desc
-      +adjust-font-size-to(14px)
-      text-align: justify
