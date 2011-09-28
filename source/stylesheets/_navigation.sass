@@ -1,0 +1,33 @@
+#navigation
+  $fs: 24px
+  margin-top: -89px
+  ul
+    +container
+    // +grid-background
+
+  li
+    $sw: span(3)
+
+    +adjust-font-size-to($fs)
+    +column(3)
+    +opacity(0.5)
+    +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
+
+    background: image-url('ui.png') no-repeat
+    text-align: center
+
+    &.dessert
+      +sprite-column(2, $sw)
+    &.salad
+      +sprite-column(3, $sw)
+    &.pasta
+      +last
+      +sprite-column(4, $sw)
+
+    a
+      +bracket
+      +link-colors(#fff)
+      +padding-leader(5, $fs)
+
+      display:          block
+      text-decoration:  none

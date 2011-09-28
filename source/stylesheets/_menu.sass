@@ -1,0 +1,71 @@
+#menu
+  color:     #000
+  overflow:  hidden
+  position:  relative
+
+  > div
+    +opacity(0)
+    +single-transition(opacity, $menu-transition-duration * 1.6, ease-in)
+
+    left:         50%
+    position:     absolute
+    bottom:       0
+    margin-left:  -$blueprint-container-size / 2
+    width:        $blueprint-container-size
+
+#menu, #tiles
+  +opacity(0)
+  +single-transition(height, $menu-transition-duration, $menu-transition-timing)
+
+#tiles
+  +single-box-shadow(#000, 0, 0, 10px, 0, true)
+
+  position:  absolute
+  width:     100%
+
+@each $part in pizza rhythm(107), dessert 300px, salad 300px, pasta 400px
+  $section:  nth($part, 1)
+  $height:   nth($part, 2)
+
+  ##{$section}
+    &:target
+      #navigation .#{$section}, #menu .#{$section}, #menu, #tiles
+        +opacity(1)
+      #menu, #tiles
+        height: $height
+      #tiles
+        background-image: image-url("menu-#{$section}.png")
+
+#menu
+  .pizza
+    > div
+      +clearfix
+      +trailer
+
+      &:hover
+        .prices
+          +opacity(1)
+    .prices
+      +float-right
+      +opacity(0.4)
+      margin-top:   rhythm(-2)
+
+      .small, .medium, .large
+        +column(1)
+        +padding-leader(2)
+        text-align: center
+      .small
+        +sprite-img('sizes.png', 1, 1, $blueprint-grid-width)
+      .medium
+        +sprite-img('sizes.png', 2, 1, $blueprint-grid-width)
+      .large
+        +sprite-img('sizes.png', 3, 1, $blueprint-grid-width)
+        +last
+    .name, .desc
+      +column(9)
+    .name
+      +bracket
+      +adjust-font-size-to(24px)
+    .desc
+      +adjust-font-size-to(14px)
+      text-align: justify

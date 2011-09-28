@@ -1,0 +1,23 @@
+#heading
+  +clearfix
+  +container
+  // +grid-background
+
+  h2
+    display: none
+
+  h1
+    +replace-text-with-dimensions('logo.png')
+    margin-left: -$logo-offset-left + (span(1) + $blueprint-grid-margin) / 2
+    margin-top: -99px
+    +float-left
+
+  address
+    +float-left
+    +adjust-font-size-to(45px, 4)
+    margin-left: -$logo-offset-right + span(0.5) + $blueprint-grid-margin * 2
+
+    a
+      display: block
+      +hover-link
+      +link-colors(#fff)
