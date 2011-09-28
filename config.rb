@@ -2,7 +2,8 @@ def render_pizza_list
   data.pizzas.pizzas.inject("") do |html, (id, map)|
     locals = {
       name: id,
-      desc: map[:desc] || toppings_list(map)
+      desc: map[:desc] || toppings_list(map),
+      map:  map
     }
 
     html << partial("menu_pizza", locals: locals)
@@ -22,6 +23,10 @@ def to_sentence(ary, joined_by = ', ', finally = ' and ')
   last = ary.pop
 
   "%s%s%s" % [ary.join(joined_by), finally, last]
+end
+
+def titleize(word)
+  word.to_s.gsub(/_/, ' ').gsub(/\b([a-z])/) { $1.capitalize }
 end
 
 activate :automatic_image_sizes

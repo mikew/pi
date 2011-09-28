@@ -6,6 +6,7 @@
 
 html
   background-image: image-url('leather.png')
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 body
   color: #fff
@@ -28,20 +29,21 @@ body
   +single-box-shadow(#000, 0, 0, 10px, 0, true)
   +single-transition(height, $menu-transition-duration, $menu-transition-timing)
 
-  background-color:  #fff
-  background-image:  image-url('menu.png')
-  color:             #000
-  height:            0
-  position:          relative
+  background:  #b5deb1 image-url('menu.png')
+  color:       #000
+  overflow:    hidden
+  position:    relative
 
   > div
+    border: 1px solid #f0f
     +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
     +opacity(0)
 
-    height:    0
-    left:      0
+    left:      50%
     position:  absolute
-    top:       0
+    bottom:       0
+    margin-left: -$blueprint-container-size / 2
+    width: $blueprint-container-size
 
 #navigation
   $fs: 24px
@@ -82,10 +84,7 @@ body
   p
     +leader
 
-#pizza #menu .pizza
-  +container
-
-@each $part in pizza 1196px, dessert 300px, salad 300px, pasta 400px
+@each $part in pizza rhythm(63), dessert 300px, salad 300px, pasta 400px
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -93,9 +92,26 @@ body
     &:target
       #navigation .#{$section}
         +opacity(1)
-        text-transform: uppercase
 
       #menu
         height: $height
         .#{$section}
           +opacity(1)
+
+#pizza #menu .pizza
+  > div
+    +clearfix
+    +trailer
+  .prices
+    +float-right
+
+    .small, .medium, .large
+      +column(1)
+  .name
+    +bracket
+
+  .desc
+    +column(9)
+    +last
+    +adjust-font-size-to(13px, 0.5)
+    text-align: justify
