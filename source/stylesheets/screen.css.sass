@@ -55,12 +55,12 @@ body
   +opacity(0)
 
   > div
-    +single-transition(opacity, $menu-transition-duration * 1.6, $menu-transition-timing)
+    +single-transition(opacity, $menu-transition-duration * 1.6, ease-in)
     +opacity(0)
 
     left:      50%
     position:  absolute
-    bottom:       0
+    top:       0
     margin-left: -$blueprint-container-size / 2
     width: $blueprint-container-size
 
@@ -105,7 +105,7 @@ body
   p
     +leader
 
-@each $part in pizza rhythm(99), dessert 300px, salad 300px, pasta 400px
+@each $part in pizza rhythm(107), dessert 300px, salad 300px, pasta 400px
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -130,25 +130,37 @@ body
     > div
       +clearfix
       +trailer
+
+      &:hover
+        .prices
+          display: block
     .prices
       // +db
       +float-right
-      margin-top: rhythm(-1.5)
+      margin-top: rhythm(-2)
       margin-left: $blueprint-grid-margin
+      display: none
 
       .small, .medium, .large
         +column(1)
+        +padding-leader(2)
+        text-align: center
+      .small
+        +sprite-img('sizes.png', 1, 1, $blueprint-grid-width)
+      .medium
+        +sprite-img('sizes.png', 2, 1, $blueprint-grid-width)
       .large
+        +sprite-img('sizes.png', 3, 1, $blueprint-grid-width)
         +last
     .name
       // +db
       +bracket
-      +adjust-font-size-to(24px, 1.5)
+      +adjust-font-size-to(24px)
       +column(9)
     .desc
       // +db
       +column(9, true)
-      +adjust-font-size-to(15px)
+      +adjust-font-size-to(14px)
       text-align: justify
 
 // html > body #menu
