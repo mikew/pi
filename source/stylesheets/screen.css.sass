@@ -4,6 +4,9 @@
 +global-reset
 +establish-baseline
 
+*
+  -webkit-font-smoothing: subpixel-antialiased
+
 html
   background-image: image-url('leather.png')
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -13,12 +16,28 @@ body
   +single-box-shadow(#000, 0, 0, 10px, 100%, true)
 
 #heading
+  +clearfix
+  +container
+  // +grid-background
+
   h2
     display: none
 
   h1
     +replace-text-with-dimensions('logo.png')
-    margin-left: -100px
+    margin-left: -$logo-offset-left + (span(1) + $blueprint-grid-margin) / 2
+    margin-top: -99px
+    +float-left
+
+  address
+    +float-left
+    +adjust-font-size-to(45px, 4)
+    margin-left: -$logo-offset-right + span(0.5) + $blueprint-grid-margin * 2
+
+    a
+      display: block
+      +hover-link
+      +link-colors(#fff)
 
 #menu
   // this kind of kills mobilesafari
@@ -29,14 +48,14 @@ body
   +single-box-shadow(#000, 0, 0, 10px, 0, true)
   +single-transition(height, $menu-transition-duration, $menu-transition-timing)
 
-  background:  #b5deb1 image-url('menu.png')
+  // background:  #b5deb1 image-url('menu.png')
   color:       #000
   overflow:    hidden
   position:    relative
+  +opacity(0)
 
   > div
-    border: 1px solid #f0f
-    +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
+    +single-transition(opacity, $menu-transition-duration * 1.6, $menu-transition-timing)
     +opacity(0)
 
     left:      50%
@@ -47,8 +66,10 @@ body
 
 #navigation
   $fs: 24px
+  margin-top: -89px
   ul
     +container
+    // +grid-background
 
   li
     $sw: span(3)
@@ -84,7 +105,7 @@ body
   p
     +leader
 
-@each $part in pizza rhythm(63), dessert 300px, salad 300px, pasta 400px
+@each $part in pizza rhythm(99), dessert 300px, salad 300px, pasta 400px
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -94,24 +115,49 @@ body
         +opacity(1)
 
       #menu
+        background-image: image-url("menu-#{$section}.png")
         height: $height
+        +opacity(1)
+
         .#{$section}
           +opacity(1)
 
-#pizza #menu .pizza
-  > div
-    +clearfix
-    +trailer
-  .prices
-    +float-right
+// #dessert:target #menu
+  background: #f0f none
 
-    .small, .medium, .large
-      +column(1)
-  .name
-    +bracket
+#menu
+  .pizza
+    > div
+      +clearfix
+      +trailer
+    .prices
+      // +db
+      +float-right
+      margin-top: rhythm(-1.5)
+      margin-left: $blueprint-grid-margin
 
-  .desc
-    +column(9)
-    +last
-    +adjust-font-size-to(13px, 0.5)
-    text-align: justify
+      .small, .medium, .large
+        +column(1)
+      .large
+        +last
+    .name
+      // +db
+      +bracket
+      +adjust-font-size-to(24px, 1.5)
+      +column(9)
+    .desc
+      // +db
+      +column(9, true)
+      +adjust-font-size-to(15px)
+      text-align: justify
+
+// html > body #menu
+  +grid-background
+
+#vignette
+  +single-box-shadow(#000, 0, 0, 20px, 5px, true)
+  position: fixed
+  top: 0
+  left: 0
+  min-height: 100%
+  width: 100%

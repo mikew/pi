@@ -1,6 +1,7 @@
 @import compass
 @import compass/typography/vertical_rhythm
 
+@import "compass/layout/grid-background"
 $base-font-size:          18px
 $base-line-height:        26px
 
@@ -11,9 +12,23 @@ $blueprint-grid-margin:   10px
 $menu-transition-duration: 618ms
 $menu-transition-timing:   ease-out
 
+$logo-offset-top: 99px
+$logo-offset-left: 139px
+$logo-offset-bottom: 89px
+$logo-offset-right: 172px
+
+$grid-background-total-columns: $blueprint-grid-columns
+$grid-background-column-width: $blueprint-grid-width
+$grid-background-gutter-width: $blueprint-grid-margin
+$grid-background-baseline-height: $base-line-height
+// $grid-background-offset: 250px
+
 =bracket
   text-transform: lowercase
   &:before
     content: '['
   &:after
     content: ']'
+
+=db
+  background-color: rgba(#f0f, 0.2) !important
