@@ -1,12 +1,20 @@
-pizzas:
+---
   cheese:
     desc: An herb tomato base with your choice of our italian cheese blend or soya cheese. enjoy it plain or add toppings of your choice.
+    price:
+      small: 14
+      medium: 17
+      large: 21
   classic:
     toppings:
       - pepperoni
       - green peppers
       - mushrooms
       - sliced fresh tomatoes
+    price:
+      small: 16
+      medium: 21
+      large: 26
   veggie_life:
     bases:
       - herb tomato
@@ -21,6 +29,10 @@ pizzas:
     cheeses:
       - italian blend
       - soya
+    price:
+      small: 16
+      medium: 21
+      large: 26
   pythagoras:
     base: creamy tomato sauce
     toppings:
@@ -30,6 +42,10 @@ pizzas:
       - bacon
       - italian blend
       - parmesan cheese
+    price:
+      small: 19
+      medium: 25
+      large: 30
   fibonacci:
     base: roasted garlic and olive oil
     toppings:
@@ -37,6 +53,10 @@ pizzas:
       - baby greens
       - toasted walnuts
       - gouda cheese
+    price:
+      small: 19
+      medium: 25
+      large: 30
   prime_colours:
     base: pesto base
     toppings:
@@ -47,6 +67,10 @@ pizzas:
       - hot banana peppers
       - italian blend
       - parmesan
+    price:
+      small: 19
+      medium: 25
+      large: 30
   pi:
     base: pesto tomato
     toppings:
@@ -55,6 +79,10 @@ pizzas:
       - mushrooms
       - avocado slices
       - leeks
+    price:
+      small: 29
+      medium: 25
+      large: 30
   archimedes:
     base: mediterranean vegetable
     toppings:
@@ -65,6 +93,10 @@ pizzas:
       - roasted garlic
       - italian blend + feta
       - soya
+    price:
+      small: 18
+      medium: 24
+      large: 28
   einstein:
     base: pesto
     toppings:
@@ -73,6 +105,10 @@ pizzas:
       - red onion
       - sliced black olives
       - pineapple chunks
+    price:
+      small: 19
+      medium: 25
+      large: 30
   pascal:
     base: curry infused tomato
     toppings:
@@ -81,6 +117,10 @@ pizzas:
       - green peppers
       - hot banana peppers
       - fresh tomato
+    price:
+      small: 19
+      medium: 25
+      large: 30
   sir_isaac_salmon:
     base: sundried tomato and avocado cream cheese
     toppings:
@@ -89,6 +129,10 @@ pizzas:
       - red onion
       - fresh tomatoes
       - feta + italian
+    price:
+      small: 21
+      medium: 27
+      large: 32
   columbus:
     base: pesto
     toppings:
@@ -98,6 +142,10 @@ pizzas:
       - sundried tomatoes
       - hot banana peppers
       - feta + italian
+    price:
+      small: 21
+      medium: 27
+      large: 32
   carnivore:
     base: black olive tomato
     toppings:
@@ -106,6 +154,10 @@ pizzas:
       - shaved steak
       - chicken
       - red onion
+    price:
+      small: 21
+      medium: 27
+      large: 32
   sicilian_salmon:
     toppings:
       - smoked salmon
@@ -113,6 +165,10 @@ pizzas:
       - fresh tomatoes
       - capers
       - feta cheese
+    price:
+      small: 18
+      medium: 24
+      large: 28
   tuscan:
     toppings:
       - italian sausage
@@ -120,6 +176,10 @@ pizzas:
       - mushrooms
       - red onion
       - fresh tomatoes
+    price:
+      small: 18
+      medium: 24
+      large: 28
   wok:
     base: sesame seed crust with a teriyaki
     toppings:
@@ -128,6 +188,10 @@ pizzas:
       - red onion
       - portobello mushrooms
       - italian blend + parmesan
+    price:
+      small: 21
+      medium: 27
+      large: 32
   szechuan_chicken:
     base: habanero-infused tomato
     toppings:
@@ -136,6 +200,10 @@ pizzas:
       - red onions
       - chicken
       - pineapple chunks
+    price:
+      small: 21
+      medium: 27
+      large: 32
   calabria:
     base: creamy red wine tomato
     toppings:
@@ -145,6 +213,10 @@ pizzas:
       - red onion
       - black olives
       - italian blend + parmesan
+    price:
+      small: 21
+      medium: 27
+      large: 32
   genius:
     base: olive oil garlic
     toppings:
@@ -154,5 +226,10 @@ pizzas:
       - pear and onion compote
       - bacon
       - feta
+    price:
+      small:   21
+      medium:  27
+      large:   32
   calzone:
-    desc: a thin crust italian turnover with tomato sauce and our italian cheese. add toppings $1.75
+    desc: a thin crust italian turnover with tomato sauce and our italian cheese. add any topping for $1.75
+    price: 9

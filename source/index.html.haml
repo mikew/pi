@@ -1,26 +1,8 @@
 #tiles
 #menu
-  .pizza
-    %p= link_to "Close", "#"
-    = render_pizza_list
-  .dessert
-    %p= link_to "Close", "#"
-    - data.desserts.desserts.each do |key, map|
-      .item
-        .name= titleize key
-        .desc= map[:desc]
-        .prices= map[:price]
+  - (MAIN_SECTIONS - ['Salad']).each do |section|
+    %div{ class: section.downcase }
+      = render_menu_for(section.downcase.to_sym)
   .salad
-    %p= link_to "Close", "#"
-    - data.salads.salads.each do |key, map|
-      .item
-        .name= titleize key
-        .desc= map[:desc]
-        .prices 6 9 14
-  .pasta
-    %p= link_to "Close", "#"
-    - data.pasta.pasta.each do |key, map|
-      .item
-        .name= titleize key
-        .desc= map[:desc]
-        .prices 6 9 14
+    = render_menu_for :salad
+    = render_menu_for :app

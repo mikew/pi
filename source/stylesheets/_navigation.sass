@@ -3,11 +3,11 @@
   margin-top: -$logo-offset-bottom + $logo-span-margin
   ul
     +container
+    height: rhythm(7)
 
   li
     $sw: span(3)
     $sh: $base-line-height * 5
-    +adjust-font-size-to($fs)
     +column(3)
     +opacity(0.5)
     +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
@@ -26,6 +26,7 @@
       +offset-sprite-position($logo-width, 4, 1, $sw, $sh)
 
     a
+      +adjust-font-size-to($fs)
       +bracket
       +link-colors(#fff)
       +padding-leader(5, $fs)

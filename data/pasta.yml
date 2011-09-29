@@ -1,25 +1,25 @@
-pasta:
+---
   verdura:
-    desc: sautéed spinach, mushrooms, red onion, olives, sun-dried tomatoes and artichoke hearts tossed with linguini and your choice of sauce
+    desc: sautéed spinach, mushrooms, red onion, olives, sun-dried tomatoes and artichoke hearts tossed with linguini and your choice of sauce.
     price:
-      olive_oil_and_garlic_sauce: 19
-      apple_curry_sauce: 19
-      basil_pesto_sauce: 21
+      oil_+_garlic: 19
+      apple_curry: 19
+      basil_pesto: 21
   smoked_salmon_cream:
-    desc: smoked salmon, artichoke hearts, mushrooms red onion, and fresh tomatoes sautéed in a red wine cream sauce tossed with linguini pasta and baked with feta
+    desc: smoked salmon, artichoke hearts, mushrooms red onion, and fresh tomatoes sautéed in a red wine cream sauce tossed with linguini pasta and baked with feta.
     price: 26
   fettuccine_alfredo:
-    desc: our pasta tossed in a parmesan cream sauce with a hint of garlic
+    desc: our pasta tossed in a parmesan cream sauce with a hint of garlic.
     price:
       plain: 15
-      add_veggies: +3
-      add_chicken: +3
+      add_veggies: '+3'
+      add_chicken: '+3'
   tortellini_hayden:
-    desc: a spicy rose cream sauce with bacon, mushrooms, green pepper, red onion, artichoke hearts and fresh tomatoes on a bed of cheese filled tortellini
+    desc: a spicy rose cream sauce with bacon, mushrooms, green pepper, red onion, artichoke hearts and fresh tomatoes on a bed of cheese filled tortellini.
     price: 21
   pesto_cream:
-    desc: sautéed roasted chicken, green peppers, sun-dried tomatoes, red onions and mushrooms tossed with your choice of linguini or cheese tortellini in a pesto cream sauce
+    desc: sautéed roasted chicken, green peppers, sun-dried tomatoes, red onions and mushrooms tossed with your choice of linguini or cheese tortellini in a pesto cream sauce.
     price: 23
   artichoke_cream:
-    desc: sautéed artichokes, red onion, leeks, zucchini and mushrooms with cheese tortellini in a thick artichoke cream sauce and baked with feta cheese
+    desc: sautéed artichokes, red onion, leeks, zucchini and mushrooms with cheese tortellini in a thick artichoke cream sauce and baked with feta cheese.
     price: 24

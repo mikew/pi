@@ -1,6 +1,6 @@
 @import compass
 @import compass/typography/vertical_rhythm
-@import "compass/layout/grid-background"
+@import compass/layout/grid-background
 
 $base-font-size:          18px
 $base-line-height:        26px
@@ -31,14 +31,29 @@ $grid-background-baseline-height:  $base-line-height
 // $grid-background-offset:           250px
 
 =bracket
-  text-transform: lowercase
+  +lowercase
   &:before
     content: '['
   &:after
     content: ']'
 
+=lowercase
+  text-transform: lowercase
+
 =db
   background-color: rgba(#f0f, 0.2) !important
+
+=price-with-meta
+  .price
+    +adjust-leading-to(1)
+    +leader(-1)
+    .meta
+      +adjust-font-size-to(14px)
+      +column(2)
+      +lowercase
+      text-align: right
+    .ord
+      +column(1, true)
 
 =offset-sprite-img($img, $offset, $col, $row: 1, $width: $sprite-image-default-width, $height: $sprite-image-default-height, $margin: $sprite-default-margin)
   +sprite-background($img, $width, $height)

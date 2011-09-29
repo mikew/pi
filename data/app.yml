@@ -1,0 +1,19 @@
+---
+  homemade_feature_soup:
+    desc: always homemade, always fresh. please ask your server for today's creation.
+    price: 6
+  garlic_cheese_bread:
+    desc: basket of three slices of our italina crusty bread with olive oil + garlic and italian or soya cheese.
+    price: 6
+  focaccia_bread_basket:
+    desc: homamade italian flatbread baked with pesto and server with balsamic vinaigrette.
+    price: 6
+  chive_and_garlic_dip:
+    desc: a warm cream cheese dip with chives and garlic topped with proscuitto ham and baked with parmesan cheese. serverd with bread.
+    price: 12
+  crostini:
+    desc: an italian flatbread with olive oil and garlic sauce, baked with italian blend cheese then cut into strips. try it with our homemade sun-dried tomato dip +$1
+    price: 12
+  mushroom_crostini:
+    desc: an italian flatbread with baby spinach, sautéed mushrooms and red onions in a white wine and herb sauce baked with feta
+    price: 14

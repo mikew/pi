@@ -1,16 +1,21 @@
-def render_pizza_list
-  data.pizzas.pizzas.inject("") do |html, (id, map)|
+MAIN_SECTIONS = %w[Pizza Dessert Salad Pasta]
+
+def render_menu_for(section)
+  maps = data.send(section.to_sym)
+  maps.inject("") do |html, (id, map)|
+    describer = :"desc_for_#{section}"
     locals = {
-      name: id,
-      desc: map[:desc] || toppings_list(map),
-      map:  map
+      identifier:  id,
+      name:        titleize(id),
+      desc:        map[:desc] || send(describer, map),
+      price:       map[:price]
     }
 
-    html << partial("menu_pizza", locals: locals)
+    html << partial("menu_item", locals: locals)
   end
 end
 
-def toppings_list(map)
+def desc_for_pizza(map)
   format  = "%s base topped with %s."
   base    = map[:base] || 'herb tomato'
   lead_in = base =~ /^[aeiou]/ ? 'An %s' : 'A %s'
@@ -26,7 +31,7 @@ def to_sentence(ary, joined_by = ', ', finally = ' and ')
 end
 
 def titleize(word)
-  word.to_s.gsub(/_/, ' ').gsub(/\b([a-z])/) { $1.capitalize }
+  word.to_s.gsub(/_and_/, ' &#038; ').gsub(/_/, ' ').gsub(/\b([a-z])/) { $1.capitalize }
 end
 
 activate :automatic_image_sizes

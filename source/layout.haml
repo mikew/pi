@@ -20,8 +20,8 @@
           #pasta
             #navigation
               %ul
-                - %w[Pizza Dessert Salad Pasta].each do |w|
-                  %li{class: w.downcase}= link_to w, "##{w.downcase}"
+                - MAIN_SECTIONS.each do |w|
+                  %li{ class: w.downcase }= link_to w, "##{w.downcase}"
 
             #page= yield
 

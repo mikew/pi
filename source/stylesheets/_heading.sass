@@ -8,20 +8,22 @@
     display: none
 
   h1
-    // +replace-text-with-dimensions('logo.png')
+    +float-left
     +hide-text
     +sprite-img('hud.png', 1, 1, $logo-width, $logo-height)
+
     margin-left: -$logo-offset-left + (span(1) + $blueprint-grid-margin) / 2
     margin-top: -$logo-offset-top + $logo-span-margin
-    +float-left
 
   address
-    +float-left
     +adjust-font-size-to(45px, 3)
+    +float-left
     +leader(2, 45px)
+
     margin-left: -$logo-offset-right + span(0.5) + $blueprint-grid-margin * 2
 
     a
-      display: block
       +hover-link
       +link-colors(#fff)
+
+      display: block

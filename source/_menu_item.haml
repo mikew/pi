@@ -1,0 +1,11 @@
+%div{ id: identifier }
+  .name= name
+  .desc= desc
+  .price
+    - if price.is_a?(Hash)
+      - price.each do |key, value|
+        %div{ class: key }
+          .meta= titleize key
+          .ord= value
+    -else
+      = price

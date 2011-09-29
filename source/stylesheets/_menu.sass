@@ -25,7 +25,7 @@
   position:  absolute
   width:     100%
 
-@each $part in pizza rhythm(106), dessert rhythm(25), salad rhythm(23), pasta rhythm(34)
+@each $part in pizza rhythm(106), dessert rhythm(25), salad rhythm(54), pasta rhythm(34)
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -51,22 +51,29 @@
     +trailer(1, 14px)
 
     text-align: justify
-  .prices
+  .price
     +adjust-leading-to(2)
     +float-right
+    +leader(-2)
 
     width: span(3)
-    margin-top: rhythm(-2)
     text-align: center
-  // .pizza, .dessert, .salad, .pasta
-  .item
+  > div
     +clearfix
+  .salad
+    #caesar, #sunrise, #garden_blend, #mediterranean
+      +price-with-meta
+  .pasta
+    #verdura, #fettuccine_alfredo
+      +price-with-meta
   .pizza
-    .item:hover
-      .prices
+    > div:hover
+      .price
         +opacity(1)
-    .prices
+    .price
       +opacity(0.4)
+      .meta
+        display: none
       .small, .medium, .large
         +column(1)
         +padding-leader(2)
