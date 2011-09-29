@@ -1,7 +1,7 @@
 @import compass
 @import compass/typography/vertical_rhythm
-
 @import "compass/layout/grid-background"
+
 $base-font-size:          18px
 $base-line-height:        26px
 
@@ -12,16 +12,23 @@ $blueprint-grid-margin:   10px
 $menu-transition-duration: 618ms
 $menu-transition-timing:   ease-out
 
-$logo-offset-top: 99px
-$logo-offset-left: 139px
-$logo-offset-bottom: 89px
-$logo-offset-right: 172px
+$logo-width:          image-width('logo.png')
+$logo-height:         image-height('logo.png')
+$logo-circle-width:   250px
+$logo-circle-height:  $logo-circle-width
+$logo-offset-top:     99px
+$logo-offset-left:    139px
+$logo-offset-bottom:  $logo-height - $logo-offset-top - $logo-circle-height
+$logo-offset-right:   $logo-width - $logo-offset-left - $logo-circle-width
+$logo-span-lines:     10
+$logo-span:           $base-line-height * $logo-span-lines
+$logo-span-margin:    ($logo-span - $logo-circle-height) / 2
 
-$grid-background-total-columns: $blueprint-grid-columns
-$grid-background-column-width: $blueprint-grid-width
-$grid-background-gutter-width: $blueprint-grid-margin
-$grid-background-baseline-height: $base-line-height
-// $grid-background-offset: 250px
+$grid-background-total-columns:    $blueprint-grid-columns
+$grid-background-column-width:     $blueprint-grid-width
+$grid-background-gutter-width:     $blueprint-grid-margin
+$grid-background-baseline-height:  $base-line-height
+// $grid-background-offset:           250px
 
 =bracket
   text-transform: lowercase
@@ -32,3 +39,12 @@ $grid-background-baseline-height: $base-line-height
 
 =db
   background-color: rgba(#f0f, 0.2) !important
+
+=offset-sprite-img($img, $offset, $col, $row: 1, $width: $sprite-image-default-width, $height: $sprite-image-default-height, $margin: $sprite-default-margin)
+  +sprite-background($img, $width, $height)
+  +offset-sprite-position($offset, $col, $row, $width, $height, $margin)
+
+=offset-sprite-position($offset, $col, $row: 1, $width: $sprite-image-default-width, $height: $sprite-image-default-height, $margin: $sprite-default-margin)
+  $x: (($col - 1) * -$width - ($col - 1) * $margin) - $offset
+  $y: ($row - 1) * -$height - ($row - 1) * $margin
+  background-position: $x $y

@@ -1,20 +1,24 @@
+// $offset-bottom: 
+
 #heading
   +clearfix
   +container
-  // +grid-background
 
   h2
     display: none
 
   h1
-    +replace-text-with-dimensions('logo.png')
+    // +replace-text-with-dimensions('logo.png')
+    +hide-text
+    +sprite-img('hud.png', 1, 1, $logo-width, $logo-height)
     margin-left: -$logo-offset-left + (span(1) + $blueprint-grid-margin) / 2
-    margin-top: -99px
+    margin-top: -$logo-offset-top + $logo-span-margin
     +float-left
 
   address
     +float-left
-    +adjust-font-size-to(45px, 4)
+    +adjust-font-size-to(45px, 3)
+    +leader(2, 45px)
     margin-left: -$logo-offset-right + span(0.5) + $blueprint-grid-margin * 2
 
     a

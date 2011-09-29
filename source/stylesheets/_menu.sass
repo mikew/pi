@@ -20,11 +20,12 @@
 
 #tiles
   +single-box-shadow(#000, 0, 0, 10px, 0, true)
+  // background: #fff none
 
   position:  absolute
   width:     100%
 
-@each $part in pizza rhythm(105), dessert rhythm(25), salad rhythm(23), pasta rhythm(34)
+@each $part in pizza rhythm(106), dessert rhythm(25), salad rhythm(23), pasta rhythm(34)
   $section:  nth($part, 1)
   $height:   nth($part, 2)
 
@@ -43,21 +44,23 @@
   .name, .desc
     +column(9)
   .name
-    +bracket
     +adjust-font-size-to(24px)
+    +bracket
   .desc
     +adjust-font-size-to(14px)
+    +trailer(1, 14px)
+
     text-align: justify
   .prices
     +adjust-leading-to(2)
     +float-right
 
+    width: span(3)
     margin-top: rhythm(-2)
     text-align: center
-  .pizza, .dessert, .salad, .pasta
-    .item
-      +clearfix
-      +trailer
+  // .pizza, .dessert, .salad, .pasta
+  .item
+    +clearfix
   .pizza
     .item:hover
       .prices
@@ -69,9 +72,9 @@
         +padding-leader(2)
         text-align: center
       .small
-        +sprite-img('sizes.png', 1, 1, $blueprint-grid-width)
+        +offset-sprite-img('hud.png', $logo-width, 1, 4.5, $blueprint-grid-width, $base-line-height * 2)
       .medium
-        +sprite-img('sizes.png', 2, 1, $blueprint-grid-width)
+        +offset-sprite-img('hud.png', $logo-width, 2, 4.5, $blueprint-grid-width, $base-line-height * 2)
       .large
-        +sprite-img('sizes.png', 3, 1, $blueprint-grid-width)
+        +offset-sprite-img('hud.png', $logo-width, 3, 4.5, $blueprint-grid-width, $base-line-height * 2)
         +last

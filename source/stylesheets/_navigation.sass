@@ -1,28 +1,29 @@
 #navigation
   $fs: 24px
-  margin-top: -89px
+  margin-top: -$logo-offset-bottom + $logo-span-margin
   ul
     +container
-    // +grid-background
 
   li
     $sw: span(3)
-
+    $sh: $base-line-height * 5
     +adjust-font-size-to($fs)
     +column(3)
     +opacity(0.5)
     +single-transition(opacity, $menu-transition-duration, $menu-transition-timing)
 
-    background: image-url('ui.png') no-repeat
+    background: image-url('hud.png') no-repeat
     text-align: center
 
+    &.pizza
+      +offset-sprite-position($logo-width, 1, 1, $sw, $sh)
     &.dessert
-      +sprite-column(2, $sw)
+      +offset-sprite-position($logo-width, 2, 1, $sw, $sh)
     &.salad
-      +sprite-column(3, $sw)
+      +offset-sprite-position($logo-width, 3, 1, $sw, $sh)
     &.pasta
       +last
-      +sprite-column(4, $sw)
+      +offset-sprite-position($logo-width, 4, 1, $sw, $sh)
 
     a
       +bracket
