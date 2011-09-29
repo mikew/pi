@@ -1,6 +1,25 @@
 #goal
-  margin:  0 auto
-  width:   span(6)
+  +container
+  font-family: Baskerville, Georgia, Times, serif
 
-  p
-    +leader
+  .hours, .platitude
+    +column(6)
+  .hours
+    dl
+      +adjust-font-size-to(30px, 3)
+      +clearfix
+    dt, dd
+      +column(3)
+      +trailer(1, 30px)
+      text-align: center
+    dt
+      clear: left
+    dd
+      +last
+    p
+      +leader(-1)
+  .platitude
+    +last
+    p
+      +trailer
+      text-align: justify
