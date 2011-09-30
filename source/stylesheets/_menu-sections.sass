@@ -1,0 +1,14 @@
+@each $part in $menu-sections
+  $section:  nth($part, 1)
+  $lines:    nth($part, 2)
+
+  ##{$section}
+    &:target
+      #navigation .#{$section}, #menu .#{$section}, #menu, #tiles
+        +opacity(1)
+      #menu, #tiles
+        height: rhythm($lines)
+      #tiles
+        background-image: image-url("menu-#{$section}.png")
+      #menu .#{$section}
+        z-index: 2

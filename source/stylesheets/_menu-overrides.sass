@@ -1,0 +1,26 @@
+#menu
+  .salad
+    #caesar, #sunrise, #garden_blend, #mediterranean
+      +price-with-meta
+  .pasta
+    #verdura, #fettuccine_alfredo
+      +price-with-meta
+  .pizza
+    > div:hover
+      .price
+        +opacity(1)
+    .price
+      +opacity(0.4)
+      .meta
+        display: none
+      .small, .medium, .large
+        +column(1)
+        +padding-leader(2)
+        text-align: center
+      .small
+        +offset-sprite-img('hud.png', $logo-width, 1, 4.5, $blueprint-grid-width, $base-line-height * 2)
+      .medium
+        +offset-sprite-img('hud.png', $logo-width, 2, 4.5, $blueprint-grid-width, $base-line-height * 2)
+      .large
+        +offset-sprite-img('hud.png', $logo-width, 3, 4.5, $blueprint-grid-width, $base-line-height * 2)
+        +last

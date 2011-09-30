@@ -1,0 +1,29 @@
+$hider-size:    20px
+$hider-lines:   2
+$hider-width:   span(1)
+$hider-height:  rhythm($hider-lines, $hider-size)
+
+$hider-offset-left:  span($blueprint-grid-columns / 2) + $blueprint-grid-margin / 2 + $hider-width + $blueprint-grid-margin
+$hider-offset-top:   11 * $base-line-height
+
+#hider
+  +adjust-font-size-to($hider-size, $hider-lines)
+  +border-radius(3px)
+  +unstyled-link
+
+  background-color:  rgba(#000, 0.4)
+  bottom:            $hider-offset-top
+  color:             rgba(#fff, 0.7)
+  display:           none
+  height:            $hider-height
+  left:              50%
+  margin-left:       -$hider-offset-left
+  position:          fixed
+  text-align:        center
+  width:             $hider-width
+  z-index:           10
+
+#{$menu-sections-id}
+  &:target
+    #hider
+      display: block

@@ -1,17 +1,16 @@
 #vignette
-  +single-box-shadow(#000, 0, 0, 20px, 5px, true)
-  position: fixed
-  top: 0
-  left: 0
   +min-height(100%)
-  width: 100%
-  z-index: 1
+  +single-box-shadow(#000, 0, 0, 20px, 5px, true)
+
+  left:      0
+  position:  fixed
+  top:       0
+  width:     100%
+  z-index:   1
 
 #heading address, #navigation, #goal
-  z-index: 2
+  position:  relative
+  z-index:   2
 
 #tiles
   z-index: -1
-
-#heading address, #navigation
-  position: relative

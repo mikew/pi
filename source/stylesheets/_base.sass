@@ -2,7 +2,7 @@
 @import compass/typography/vertical_rhythm
 @import compass/layout/grid-background
 
-$main-sections: pizza 106, dessert 25, salad 54, pasta 34
+$menu-sections: pizza 106, dessert 25, salad 54, pasta 35
 
 $base-font-size:          18px
 $base-line-height:        26px
@@ -42,6 +42,17 @@ $grid-background-baseline-height:  $base-line-height
   left:         50%
   margin-left:  -$width / 2
   width:        $width
+
+@function prefix-section-names($prefix)
+  $prefixed: ()
+  @each $part in $menu-sections
+    $name: nth($part, 1)
+    $prefixed: append($prefixed, unquote("#{$prefix}#{$name}"), comma)
+
+  @return $prefixed
+
+$menu-sections-classed: prefix-section-names('.')
+$menu-sections-id: prefix-section-names('#')
 
 =bracket
   +lowercase

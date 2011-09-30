@@ -4,6 +4,7 @@
   position:  relative
 
   > div
+    +clearfix
     +opacity(0)
     +single-transition(opacity, $menu-transition-duration * 1.6, ease-in)
 
@@ -13,34 +14,6 @@
     margin-left:  -$blueprint-container-size / 2
     width:        $blueprint-container-size
     z-index:      -1
-
-#menu, #tiles
-  +opacity(0)
-  +single-transition(height, $menu-transition-duration, $menu-transition-timing)
-
-#tiles
-  +single-box-shadow(#000, 0, 0, 10px, 0, true)
-  // background: #fff none
-
-  position:  absolute
-  width:     100%
-
-@each $part in pizza rhythm(106), dessert rhythm(25), salad rhythm(54), pasta rhythm(34)
-  $section:  nth($part, 1)
-  $height:   nth($part, 2)
-
-  ##{$section}
-    &:target
-      #navigation .#{$section}, #menu .#{$section}, #menu, #tiles
-        +opacity(1)
-      #menu, #tiles
-        height: $height
-      #tiles
-        background-image: image-url("menu-#{$section}.png")
-      #menu .#{$section}
-        z-index: 2
-
-#menu
   .name, .desc
     +column(9)
   .name
@@ -48,7 +21,6 @@
     +bracket
   .desc
     +adjust-font-size-to(14px)
-    +trailer(1, 14px)
 
     text-align: justify
   .price
@@ -58,30 +30,22 @@
 
     width: span(3)
     text-align: center
-  > div
-    +clearfix
-  .salad
-    #caesar, #sunrise, #garden_blend, #mediterranean
-      +price-with-meta
-  .pasta
-    #verdura, #fettuccine_alfredo
-      +price-with-meta
-  .pizza
-    > div:hover
-      .price
-        +opacity(1)
-    .price
-      +opacity(0.4)
-      .meta
-        display: none
-      .small, .medium, .large
-        +column(1)
-        +padding-leader(2)
-        text-align: center
-      .small
-        +offset-sprite-img('hud.png', $logo-width, 1, 4.5, $blueprint-grid-width, $base-line-height * 2)
-      .medium
-        +offset-sprite-img('hud.png', $logo-width, 2, 4.5, $blueprint-grid-width, $base-line-height * 2)
-      .large
-        +offset-sprite-img('hud.png', $logo-width, 3, 4.5, $blueprint-grid-width, $base-line-height * 2)
-        +last
+
+  #{$menu-sections-classed}
+    > div
+      +clearfix
+      +trailer
+
+#menu, #tiles
+  +opacity(0)
+  +single-transition(height, $menu-transition-duration, $menu-transition-timing)
+
+#tiles
+  +single-box-shadow(#000, 0, 0, 10px, 0, true)
+
+  position:  absolute
+  width:     100%
+
+@import menu-sections
+@import menu-overrides
+@import hider
