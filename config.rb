@@ -1,4 +1,7 @@
+DEFAULT_HAML_OPTIONS = { format: :html5 }
 MAIN_SECTIONS = %w[Pizza Dessert Salad Pasta]
+
+set :haml, DEFAULT_HAML_OPTIONS
 
 def render_menu_for(section)
   maps = data.send(section.to_sym)
@@ -37,8 +40,9 @@ end
 activate :automatic_image_sizes
 
 configure :build do
+  set :haml, DEFAULT_HAML_OPTIONS.merge(ugly: true, attr_wrapper: '"')
   activate :minify_css
   activate :minify_javascript
-  # activate :cache_buster
-  # set :http_path, "/Content/images/"
+  activate :cache_buster
+  set :http_prefix, "/pi/"
 end

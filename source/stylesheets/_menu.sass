@@ -14,22 +14,26 @@
     margin-left:  -$blueprint-container-size / 2
     width:        $blueprint-container-size
     z-index:      -1
+
   .name, .desc
     +column(9)
+
   .name
     +adjust-font-size-to(24px)
     +bracket
+
   .desc
     +adjust-font-size-to(14px)
 
     text-align: justify
+
   .price
     +adjust-leading-to(2)
     +float-right
     +leader(-2)
 
-    width: span(3)
-    text-align: center
+    width:       span(3)
+    text-align:  center
 
   #{$menu-sections-classed}
     > div

@@ -2,8 +2,12 @@
 
 %html
   %head
+    %meta(charset="UTF-8")
     %title Pi Gourmet
     = stylesheet_link_tag "screen.css"
+    %meta(property="og:title" content="Pi Gourmet Pizza | 709.726.2000")
+    %meta(property="og:description" content="Pizza, Dessert, Salad, Pasta. 10 Kings Rd., St. John's.")
+    %meta{property: "og:image", content: image_path('og-thumbnail.png')}
 
   %body
     #vignette
