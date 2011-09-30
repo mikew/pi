@@ -2,6 +2,8 @@
 @import compass/typography/vertical_rhythm
 @import compass/layout/grid-background
 
+$main-sections: pizza 106, dessert 25, salad 54, pasta 34
+
 $base-font-size:          18px
 $base-line-height:        26px
 
@@ -29,6 +31,17 @@ $grid-background-column-width:     $blueprint-grid-width
 $grid-background-gutter-width:     $blueprint-grid-margin
 $grid-background-baseline-height:  $base-line-height
 // $grid-background-offset:           250px
+
+=normal-font
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+=fancy-font
+  font-family: Baskerville, Georgia, serif
+
+=positioned-center($width)
+  left:         50%
+  margin-left:  -$width / 2
+  width:        $width
 
 =bracket
   +lowercase
